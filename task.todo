@@ -2,4 +2,4 @@ Task - 04/16/2024
   1. Fix several issues in PersistLogin. ✅
   2. Hide Login & Register route from authorized account. ✅
   3. Apply jwt-decode to RequireAuth. ✅
-    3.1. The functionality of jwt-decode applied on PersistLogin and later on moved RequireAuth & PersistLogin in deprecated folder and implemented Protected Route. ✅
+    3.1. The functionality of jwt-decode applied on PersistLogin and later on moved RequireAuth & PersistLogin in deprecated folder and replaced with ProtectedRoute. ✅
