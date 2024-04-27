@@ -96,12 +96,16 @@ const Navbar = () => {
           </button>
         ) : (
           <>
-            <button className="text-[0.8rem] sm:text-base px-4 py-2 rounded transition hover:text-white hover:bg-primary text-primary bg-white">
-              <Link to={"login"}>Login</Link>
-            </button>
-            <button className="text-[0.8rem] sm:text-base px-4 py-2 rounded transition hover:text-primary hover:bg-white text-white bg-primary">
-              <Link to={"register"}>Register</Link>
-            </button>
+            <Link to={"login"}>
+              <button className="text-[0.8rem] sm:text-base px-4 py-2 rounded transition hover:text-white hover:bg-primary text-primary bg-white">
+                Login
+              </button>
+            </Link>
+            <Link to={"register"}>
+              <button className="text-[0.8rem] sm:text-base px-4 py-2 rounded transition hover:text-primary hover:bg-white text-white bg-primary">
+                Register
+              </button>
+            </Link>
           </>
         )}
       </section>
