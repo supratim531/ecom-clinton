@@ -18,13 +18,13 @@ const Products = () => {
 
   const getAllProducts = async () => {
     try {
-      const res = await privateAxios.get("/product/?page-size=10&page=1", {
+      const res = await privateAxios.get("/product/?page-size=1&page=1", {
         signal: controller.signal,
       });
       console.log({ res });
       const { data } = res;
       console.log({ data });
-      setProducts(data?.products);
+      setProducts(data?.product);
     } catch (err) {
       if (err instanceof CanceledError) {
         console.log({ err });
