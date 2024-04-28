@@ -2,9 +2,9 @@ import "./index.css";
 import React from "react";
 import { useRefreshToken } from "../../hooks/useRefreshToken";
 import banner from "../../assets/img/banner-bg.jpg";
-import deliveryVan from "../../assets/img/icons/delivery-van.svg";
-import moneyBack from "../../assets/img/icons/money-back.svg";
-import serviceHours from "../../assets/img/icons/service-hours.svg";
+import deliveryVan from "../../assets/svg/delivery-van.svg";
+import moneyBack from "../../assets/svg/money-back.svg";
+import serviceHours from "../../assets/svg/service-hours.svg";
 import category1 from "../../assets/img/category/category-1.jpg";
 import category2 from "../../assets/img/category/category-2.jpg";
 import category3 from "../../assets/img/category/category-3.jpg";
@@ -74,10 +74,10 @@ const Home = () => {
 
       <section
         aria-label="Provided services"
-        className="container mx-auto my-16"
+        className="services-container px-[1rem] xs:container xs:mx-auto my-16"
       >
-        <section className="services">
-          <section className="border border-primary rounded-sm px-3 py-6 flex justify-center items-center gap-5">
+        <section className="services [&_p]:text-nowrap">
+          <section className="border border-primary rounded-sm px-3 py-6 flex flex-row-reverse justify-between sm:justify-center items-center gap-5 sm:gap-10">
             <img
               src={deliveryVan}
               alt="Delivery Van"
@@ -88,7 +88,7 @@ const Home = () => {
               <p className="text-gray-500 text-sm">Order over $200</p>
             </div>
           </section>
-          <section className="border border-primary rounded-sm px-3 py-6 flex justify-center items-center gap-5">
+          <section className="border border-primary rounded-sm px-3 py-6 flex flex-row-reverse justify-between sm:justify-center items-center gap-5 sm:gap-10">
             <img
               src={moneyBack}
               alt="Money Back Guarantee"
@@ -99,7 +99,7 @@ const Home = () => {
               <p className="text-gray-500 text-sm">30 days money returs</p>
             </div>
           </section>
-          <section className="border border-primary rounded-sm px-3 py-6 flex justify-center items-center gap-5">
+          <section className="border border-primary rounded-sm px-3 py-6 flex flex-row-reverse justify-between sm:justify-center items-center gap-5 sm:gap-10">
             <img
               src={serviceHours}
               alt="Service Hours"
@@ -117,15 +117,15 @@ const Home = () => {
         aria-label="Shopping by category"
         className="categories-container px-[10px] sm:px-[1rem] sm:container sm:mx-auto my-16"
       >
-        <h2 className="mb-4 uppercase font-medium text-center sm:text-start text-lg min-[480px]:text-2xl text-secondary">
+        <h2 className="mb-4 uppercase font-bold xs:font-medium text-center min-[480px]:text-start text-sm xs:text-lg min-[480px]:text-2xl text-secondary">
           Shop By Category
         </h2>
         <section
           aria-label="Available categories to shop"
           className="categories"
         >
-          {categories.map((category) => (
-            <ul>
+          {categories.map((category, index) => (
+            <ul key={index}>
               <li className="relative rounded-sm overflow-hidden group">
                 <img
                   src={category.image}
@@ -142,7 +142,7 @@ const Home = () => {
                     backgroundImage:
                       "linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, 0.5)",
                   }}
-                  className="absolute font-roboto font-medium inset-0 lg:opacity-0 transition-all flex items-center justify-center text-xl hover:opacity-100 text-white bg-[#00000060]"
+                  className="absolute font-roboto font-medium inset-0 lg:opacity-0 transition-all flex items-center justify-center text-lg xs:text-sm min-[400px]:text-xl hover:opacity-100 text-white bg-[#00000060]"
                 >
                   {category.name}
                 </Link>
@@ -151,6 +151,11 @@ const Home = () => {
           ))}
         </section>
       </section>
+
+      <section
+        aria-label="View product list"
+        className="categories-container px-[10px] sm:px-[1rem] sm:container sm:mx-auto my-16"
+      ></section>
 
       {/* <h2>Home</h2>
       <p>This is Home Page.</p>

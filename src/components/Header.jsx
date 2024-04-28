@@ -2,15 +2,13 @@ import React from "react";
 import SearchBar from "./SearchBar";
 import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
-import { useLogout } from "../hooks/useLogout";
 import { useAuth } from "../hooks/useAuth";
 import { screenWidth } from "../utils/screen";
-import logo from "../assets/svg/logo.svg";
 import order from "../assets/svg/order.svg";
-import smallLogo from "../assets/favicons/favicon-96x96.png";
+import logo from "../assets/svg/logo.svg";
+import smallLogo from "../assets/logo/android-chrome-192x192.png";
 
 const Header = () => {
-  const logout = useLogout();
   const { auth } = useAuth();
 
   return (
@@ -21,9 +19,9 @@ const Header = () => {
           <img
             src={screenWidth >= 370 ? logo : smallLogo}
             alt="Logo"
-            className={screenWidth >= 370 ? "w-auto" : "w-10"}
-            width={screenWidth >= 370 ? 122 : 96}
-            height={screenWidth >= 370 ? 23 : 96}
+            className={screenWidth >= 370 ? "w-auto" : "w-[32px]"}
+            width={screenWidth >= 370 ? 122 : 192}
+            height={screenWidth >= 370 ? 23 : 192}
           />
         </div>
         <div className="hidden lg:block search-section flex-grow">
