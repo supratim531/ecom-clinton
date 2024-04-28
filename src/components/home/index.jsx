@@ -115,9 +115,9 @@ const Home = () => {
 
       <section
         aria-label="Shopping by category"
-        className="categories-container container mx-auto my-16"
+        className="categories-container px-[10px] sm:px-[1rem] sm:container sm:mx-auto my-16"
       >
-        <h2 className="mb-4 uppercase font-medium text-2xl text-secondary">
+        <h2 className="mb-4 uppercase font-medium text-center sm:text-start text-lg min-[480px]:text-2xl text-secondary">
           Shop By Category
         </h2>
         <section
@@ -131,6 +131,7 @@ const Home = () => {
                   src={category.image}
                   alt={`${category.name}`}
                   className="w-full"
+                  loading="lazy"
                 />
                 <Link
                   to="/login"

@@ -44,7 +44,9 @@
       "f2"
       "f3";
   }
+}
 
+@media (max-width: 319px) {
   .categories {
     grid-template-columns: repeat(1, 1fr);
   }
