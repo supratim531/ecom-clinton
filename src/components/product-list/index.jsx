@@ -26,6 +26,7 @@ const ProductList = ({ ariaLabel, label, products }) => {
                   className="w-full"
                   width={1080}
                   height={800}
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
                   <Link
