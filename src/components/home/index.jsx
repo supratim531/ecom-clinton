@@ -5,13 +5,23 @@ import banner from "../../assets/img/banner-bg.jpg";
 import deliveryVan from "../../assets/svg/delivery-van.svg";
 import moneyBack from "../../assets/svg/money-back.svg";
 import serviceHours from "../../assets/svg/service-hours.svg";
+
 import category1 from "../../assets/img/category/category-1.jpg";
 import category2 from "../../assets/img/category/category-2.jpg";
 import category3 from "../../assets/img/category/category-3.jpg";
 import category4 from "../../assets/img/category/category-4.jpg";
 import category5 from "../../assets/img/category/category-5.jpg";
 import category6 from "../../assets/img/category/category-6.jpg";
+
+import product1 from "../../assets/img/products/product1.jpg";
+import product2 from "../../assets/img/products/product2.jpg";
+import product3 from "../../assets/img/products/product3.jpg";
+import product4 from "../../assets/img/products/product4.jpg";
+import product5 from "../../assets/img/products/product5.jpg";
+import product6 from "../../assets/img/products/product6.jpg";
+
 import { Link } from "react-router-dom";
+import ProductList from "../product-list";
 
 const Home = () => {
   const getNewAccessToken = useRefreshToken();
@@ -40,6 +50,51 @@ const Home = () => {
     {
       name: "Kitchen",
       image: category6,
+    },
+  ];
+
+  const products = [
+    {
+      product_brand: "Brand-A",
+      product_name: "Product 1",
+      product_price: 899,
+      product_discount: 12,
+      image: product1,
+    },
+    {
+      product_brand: "Brand-C",
+      product_name: "Product 2",
+      product_price: 2500,
+      product_discount: 11,
+      image: product2,
+    },
+    {
+      product_brand: "Brand-X",
+      product_name: "Product 3",
+      product_price: 1299,
+      product_discount: 4,
+      image: product3,
+    },
+    {
+      product_brand: "Brand-X",
+      product_name: "Product 4",
+      product_price: 1199,
+      product_discount: 4,
+      image: product4,
+    },
+    {
+      product_brand: "Brand-C",
+      product_name: "Product 5",
+      product_price: 3999,
+      product_discount: 45,
+      image: product5,
+    },
+    {
+      product_brand: "Brand-A",
+      product_name: "Product 6",
+      product_price: 179,
+      product_discount: 0,
+      image: product6,
     },
   ];
 
@@ -120,53 +175,45 @@ const Home = () => {
         <h2 className="mb-4 uppercase font-bold xs:font-medium text-center min-[480px]:text-start text-sm xs:text-lg min-[480px]:text-2xl text-secondary">
           Shop By Category
         </h2>
-        <section
+        <ul
+          role="menu"
           aria-label="Available categories to shop"
           className="categories"
         >
           {categories.map((category, index) => (
-            <ul key={index}>
-              <li className="relative rounded-sm overflow-hidden group">
-                <img
-                  src={category.image}
-                  alt={`${category.name}`}
-                  className="w-full"
-                  loading="lazy"
-                />
-                <Link
-                  to="/login"
-                  tabIndex={0}
-                  aria-label={`Search for ${category.name}`}
-                  role="button"
-                  style={{
-                    backgroundImage:
-                      "linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, 0.5)",
-                  }}
-                  className="absolute font-roboto font-medium inset-0 lg:opacity-0 transition-all flex items-center justify-center text-lg xs:text-sm min-[400px]:text-xl hover:opacity-100 text-white bg-[#00000060]"
-                >
-                  {category.name}
-                </Link>
-              </li>
-            </ul>
+            <li
+              key={index}
+              className="relative rounded-sm overflow-hidden group"
+            >
+              <img
+                src={category.image}
+                alt={`${category.name}`}
+                className="w-full"
+                loading="lazy"
+              />
+              <Link
+                to="/login"
+                tabIndex={0}
+                aria-label={`Search for ${category.name}`}
+                role="button"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, 0.5)",
+                }}
+                className="absolute font-roboto font-medium inset-0 lg:opacity-0 transition-all flex items-center justify-center text-lg xs:text-sm min-[400px]:text-xl hover:opacity-100 text-white bg-[#00000060]"
+              >
+                {category.name}
+              </Link>
+            </li>
           ))}
-        </section>
+        </ul>
       </section>
 
-      <section
-        aria-label="View product list"
-        className="categories-container px-[10px] sm:px-[1rem] sm:container sm:mx-auto my-16"
-      ></section>
-
-      {/* <h2>Home</h2>
-      <p>This is Home Page.</p>
-      <button
-        tabIndex={0}
-        aria-label="Get new access token"
-        onClick={getNewAccessToken}
-        className="my-2 px-2 outline outline-1 bg-gray-200"
-      >
-        Refresh Token
-      </button> */}
+      <ProductList
+        label={"Available Products"}
+        ariaLabel={"View available products"}
+        products={products}
+      />
     </section>
   );
 };

@@ -18,13 +18,13 @@ const Navbar = () => {
           <i className="fa-solid fa-bars text-xl"></i>
         </section>
         <ul className="nav-menu hidden capitalize md:flex justify-center items-center gap-6">
-          <li>
+          <li className="hover:text-white">
             <Link to={""}>Home</Link>
           </li>
-          <li>
+          <li className="hover:text-white">
             <Link to={"about"}>About</Link>
           </li>
-          <li>
+          <li className="hover:text-white">
             <Link to={"contact"}>Contact</Link>
           </li>
           {/* <li>
