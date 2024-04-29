@@ -12,12 +12,14 @@ import Login from "../components/Login";
 import Register from "../components/Register";
 import Page404 from "../components/Page404";
 import { ProtectedRoute } from "./ProtectedRoute";
+import Product from "../components/product";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       {/* public routes */}
       <Route index element={<Home />} />
+      <Route path="product" element={<Product />} />
       <Route path="login" element={<Login />} />
       <Route path="register" element={<Register />} />
 

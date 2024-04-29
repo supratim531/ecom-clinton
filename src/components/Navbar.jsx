@@ -27,9 +27,9 @@ const Navbar = () => {
           <li className="hover:text-white">
             <Link to={"contact"}>Contact</Link>
           </li>
-          {/* <li>
-            <Link to={"products"}>Products</Link>
-          </li> */}
+          <li>
+            <Link to={"product"}>Product</Link>
+          </li>
         </ul>
       </section>
       <section className="right flex justify-center items-center gap-4">

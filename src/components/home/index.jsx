@@ -23,6 +23,60 @@ import product6 from "../../assets/img/products/product6.jpg";
 import { Link } from "react-router-dom";
 import ProductList from "../product-list";
 
+export const products = [
+  {
+    product_brand: "Brand-A",
+    product_name: "Product 1",
+    product_price: 899,
+    product_discount: 12,
+    image: product1,
+  },
+  {
+    product_brand: "Brand-C",
+    product_name: "Product 2",
+    product_price: 2500,
+    product_discount: 11,
+    image: product2,
+  },
+  {
+    product_brand: "Brand-X",
+    product_name: "Product 3",
+    product_price: 1299,
+    product_discount: 4,
+    image: product3,
+  },
+  {
+    product_brand: "Brand-X",
+    product_name: "Product 4",
+    product_price: 1199,
+    product_discount: 4,
+    image: product4,
+  },
+  {
+    product_brand: "Brand-C",
+    product_name: "Product 5",
+    product_price: 3999,
+    product_discount: 45,
+    image: product5,
+  },
+  {
+    product_brand: "Brand-A",
+    product_name: "Product 6",
+    product_price: 179,
+    product_discount: 0,
+    image: product6,
+  },
+];
+
+export const productImages = {
+  product1,
+  product2,
+  product3,
+  product4,
+  product5,
+  product6,
+};
+
 const Home = () => {
   const getNewAccessToken = useRefreshToken();
 
@@ -50,51 +104,6 @@ const Home = () => {
     {
       name: "Kitchen",
       image: category6,
-    },
-  ];
-
-  const products = [
-    {
-      product_brand: "Brand-A",
-      product_name: "Product 1",
-      product_price: 899,
-      product_discount: 12,
-      image: product1,
-    },
-    {
-      product_brand: "Brand-C",
-      product_name: "Product 2",
-      product_price: 2500,
-      product_discount: 11,
-      image: product2,
-    },
-    {
-      product_brand: "Brand-X",
-      product_name: "Product 3",
-      product_price: 1299,
-      product_discount: 4,
-      image: product3,
-    },
-    {
-      product_brand: "Brand-X",
-      product_name: "Product 4",
-      product_price: 1199,
-      product_discount: 4,
-      image: product4,
-    },
-    {
-      product_brand: "Brand-C",
-      product_name: "Product 5",
-      product_price: 3999,
-      product_discount: 45,
-      image: product5,
-    },
-    {
-      product_brand: "Brand-A",
-      product_name: "Product 6",
-      product_price: 179,
-      product_discount: 0,
-      image: product6,
     },
   ];
 
