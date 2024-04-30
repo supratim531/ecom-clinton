@@ -14,7 +14,7 @@ const Navbar = () => {
       className="font-roboto font-medium p-4 flex justify-between items-center text-[#ddd] bg-secondary"
     >
       <section className="left">
-        <section role="menubar" className="hamburger block md:hidden">
+        <section role="button" className="hamburger block md:hidden">
           <i className="fa-solid fa-bars text-xl"></i>
         </section>
         <ul className="nav-menu hidden capitalize md:flex justify-center items-center gap-6">

@@ -7,7 +7,7 @@ import App from "../App";
 import Home from "../components/home";
 import About from "../components/About";
 import Contact from "../components/Contact";
-import Products from "../components/Products";
+// import Products from "../components/Products";
 import Login from "../components/Login";
 import Register from "../components/Register";
 import Page404 from "../components/Page404";
@@ -25,7 +25,7 @@ const router = createBrowserRouter(
 
       {/* we want to protect these routes */}
       <Route element={<ProtectedRoute />}>
-        <Route path="products" element={<Products />} />
+        {/* <Route path="products" element={<Products />} /> */}
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
       </Route>
