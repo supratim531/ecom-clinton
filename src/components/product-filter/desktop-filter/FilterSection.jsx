@@ -23,10 +23,11 @@ const FilterSection = ({ label, options, expanded = false }) => {
       {isSectionOpened && (
         <div className="px-5 pb-5">
           <ul className="flex flex-col gap-2">
-            {options.map((option) => (
-              <li className="flex items-center gap-2.5">
+            {options.map((option, index) => (
+              <li key={index} className="flex items-center gap-2.5">
                 <input
                   id={option}
+                  name={option}
                   type="checkbox"
                   className="cursor-pointer rounded-sm py-[7px] focus:ring-0 text-primary"
                 />

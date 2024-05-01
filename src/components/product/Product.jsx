@@ -1,6 +1,6 @@
 import React from "react";
-import ProductList from "../product-list";
-import { products, productImages } from "../home";
+import ProductList from "../product-list/ProductList";
+import { products, productImages } from "../home/Home";
 import { Link } from "react-router-dom";
 
 const Product = () => {
@@ -43,9 +43,10 @@ const Product = () => {
             aria-label="All information about this"
             className="px-0 lg:p-4 flex flex-col gap-4 bg-white"
           >
-            <section>
-              <h2 className="mb-2 uppercase text-3xl lg:text-4xl font-medium [text-shadow:1px_1px_2px_black]">
-                {"Boult Astra 350x"}
+            <section className="text-[0.85rem] xs:text-base">
+              {/* [text-shadow:1px_1px_2px_black] */}
+              <h2 className="mb-2 uppercase text-xl xs:text-2xl min-[480px]:text-3xl lg:text-4xl font-semibold text-slate-800">
+                {"Seventh Heaven Tokyo 3 Seater Sofa"}
               </h2>
               <div className="space-y-2">
                 <p className="text-gray-800 font-semibold space-x-2">
@@ -68,8 +69,12 @@ const Product = () => {
                 </p>
               </div>
               <div className="flex items-baseline mb-1 space-x-2 font-roboto mt-4">
-                <p className="text-xl text-primary font-semibold">$45.00</p>
-                <p className="text-base text-gray-400 line-through">$55.00</p>
+                <p className="text-base xs:text-lg text-primary font-semibold">
+                  $45.00
+                </p>
+                <p className="text-[0.75rem] xs:text-base text-gray-400 line-through">
+                  $55.00
+                </p>
               </div>
               <p className="mt-4 text-gray-600">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
@@ -227,12 +232,12 @@ const Product = () => {
               </div>
             </section>
             <section>
-              <h3 className="font-roboto font-medium text-lg text-secondary">
+              <h3 className="font-roboto font-medium text-base xs:text-lg text-secondary">
                 Product details
               </h3>
               <div className="w-full h-[0.5px] my-4 bg-slate-200"></div>
               <div>
-                <div className="text-gray-600">
+                <div className="text-[0.85rem] xs:text-base text-gray-600">
                   <p>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                     Tenetur necessitatibus deleniti natus dolore cum maiores

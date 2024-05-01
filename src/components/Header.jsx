@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import SearchBar from "./SearchBar";
-import Navbar from "./Navbar";
+import Navbar from "./navbar/Navbar";
 import { Link } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 import { screenWidth } from "../utils/screen";
@@ -10,9 +10,29 @@ import smallLogo from "../assets/logo/android-chrome-192x192.png";
 
 const Header = () => {
   const { auth } = useAuth();
+  const headerRef = useRef();
+  const [fixedSearchBar, setFixedSearchBar] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        // console.log(entry.target);
+        // console.log(entry.isIntersecting);
+        setFixedSearchBar(!entry.isIntersecting);
+      });
+    });
+
+    observer.observe(headerRef.current);
+  }, []);
 
   return (
-    <header className="flex flex-col bg-[#f0f5ff]">
+    <header ref={headerRef} className="flex flex-col bg-[#f0f5ff]">
+      {fixedSearchBar && (
+        <div className="p-2 fixed top-0 left-0 z-[2] w-full flex justify-start bg-white">
+          <SearchBar />
+        </div>
+      )}
+
       <Navbar />
       <div className="top p-4 flex justify-between items-center gap-10">
         <div className="logo-section">

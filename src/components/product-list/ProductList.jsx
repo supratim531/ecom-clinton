@@ -1,4 +1,4 @@
-import "./index.css";
+import "./ProductList.css";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -6,19 +6,19 @@ const ProductList = ({ ariaLabel, label, products }) => {
   return (
     <section
       aria-label={ariaLabel}
-      className="product-list-container px-[10px] sm:px-[1rem] sm:container sm:mx-auto"
+      className="product-list-container px-[10px] lg:px-[1rem] lg:container lg:mx-auto"
     >
-      <h2 className="mb-4 uppercase font-bold xs:font-medium text-center min-[480px]:text-start text-sm xs:text-lg min-[480px]:text-2xl text-secondary">
+      <h2 className="mb-4 uppercase font-bold xs:font-medium text-start text-sm xs:text-lg min-[480px]:text-2xl text-secondary">
         {label}
       </h2>
       <ul
         role="menu"
         aria-label="Explore product list to shop"
-        className="product-list"
+        className="product-list gap-[0.5rem]"
       >
         {products.map((product, index) => (
           <li key={index}>
-            <div className="group overflow-hidden rounded shadow-[0_2px_5px_0_#1f293790] bg-white">
+            <div className="group overflow-hidden rounded-sm transition hover:shadow-[0_2px_5px_0_#1f293790] bg-white">
               <div className="relative">
                 <img
                   src={product.image}
@@ -33,7 +33,7 @@ const ProductList = ({ ariaLabel, label, products }) => {
                     tabIndex={0}
                     aria-label={`View ${product.product_name}`}
                     role="button"
-                    to={"/login"}
+                    to={"/product"}
                     className="text-white text-lg w-9 h-9 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
                     title={`View ${product.product_name}`}
                   >
@@ -59,7 +59,7 @@ const ProductList = ({ ariaLabel, label, products }) => {
                   <h3 className="inline-block uppercase font-bold text-lg text-gray-400">
                     {product.product_brand}
                   </h3>
-                  <Link to={"/login"}>
+                  <Link to={"/product"}>
                     <h4 className="inline-block mb-2 text-[1rem] font-medium text-gray-700 hover:text-primary transition">
                       {product.product_name}
                     </h4>
@@ -88,7 +88,7 @@ const ProductList = ({ ariaLabel, label, products }) => {
                 tabIndex={1}
                 role="button"
                 aria-label={`Press to place an order for ${product.product_name}`}
-                className="block w-full py-2 text-center text-lg text-white bg-primary border border-primary rounded-b hover:bg-transparent hover:text-primary transition"
+                className="block w-full py-2 text-center text-lg text-white bg-primary border border-primary rounded-b-sm hover:bg-transparent hover:text-primary transition"
               >
                 Place Order
               </Link>

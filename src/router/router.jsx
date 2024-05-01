@@ -4,16 +4,15 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 import App from "../App";
-import Home from "../components/home";
+import Home from "../components/home/Home";
 import About from "../components/About";
 import Contact from "../components/Contact";
-// import Products from "../components/Products";
 import Login from "../components/Login";
 import Register from "../components/Register";
 import Page404 from "../components/Page404";
 import { ProtectedRoute } from "./ProtectedRoute";
-import Product from "../components/product";
-import Products from "../components/products/index";
+import Product from "../components/product/Product";
+import Products from "../components/products/Products";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,7 +26,6 @@ const router = createBrowserRouter(
 
       {/* we want to protect these routes */}
       <Route element={<ProtectedRoute />}>
-        {/* <Route path="products" element={<Products />} /> */}
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
       </Route>

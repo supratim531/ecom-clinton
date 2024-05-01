@@ -1,4 +1,4 @@
-import "./index.css";
+import "./Home.css";
 import React from "react";
 import { useRefreshToken } from "../../hooks/useRefreshToken";
 import banner from "../../assets/img/banner-bg.jpg";
@@ -21,7 +21,7 @@ import product5 from "../../assets/img/products/product5.jpg";
 import product6 from "../../assets/img/products/product6.jpg";
 
 import { Link } from "react-router-dom";
-import ProductList from "../product-list";
+import ProductList from "../product-list/ProductList";
 
 export const products = [
   {
@@ -58,48 +58,6 @@ export const products = [
     product_price: 3999,
     product_discount: 45,
     image: product5,
-  },
-  {
-    product_brand: "Brand-A",
-    product_name: "Product 6",
-    product_price: 179,
-    product_discount: 0,
-    image: product6,
-  },
-  {
-    product_brand: "Brand-A",
-    product_name: "Product 6",
-    product_price: 179,
-    product_discount: 0,
-    image: product6,
-  },
-  {
-    product_brand: "Brand-A",
-    product_name: "Product 6",
-    product_price: 179,
-    product_discount: 0,
-    image: product6,
-  },
-  {
-    product_brand: "Brand-A",
-    product_name: "Product 6",
-    product_price: 179,
-    product_discount: 0,
-    image: product6,
-  },
-  {
-    product_brand: "Brand-A",
-    product_name: "Product 6",
-    product_price: 179,
-    product_discount: 0,
-    image: product6,
-  },
-  {
-    product_brand: "Brand-A",
-    product_name: "Product 6",
-    product_price: 179,
-    product_discount: 0,
-    image: product6,
   },
   {
     product_brand: "Brand-A",
@@ -260,11 +218,13 @@ const Home = () => {
         </ul>
       </section>
 
-      <ProductList
-        label={"Available Products"}
-        ariaLabel={"View available products"}
-        products={products}
-      />
+      <section className="my-16">
+        <ProductList
+          label={"Available Products"}
+          ariaLabel={"View available products"}
+          products={products}
+        />
+      </section>
     </section>
   );
 };
