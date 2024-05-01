@@ -1,27 +1,61 @@
 import "./Home.css";
 import React from "react";
-import { useRefreshToken } from "../../hooks/useRefreshToken";
-import banner from "../../assets/img/banner-bg.jpg";
-import deliveryVan from "../../assets/svg/delivery-van.svg";
-import moneyBack from "../../assets/svg/money-back.svg";
-import serviceHours from "../../assets/svg/service-hours.svg";
-
-import category1 from "../../assets/img/category/category-1.jpg";
-import category2 from "../../assets/img/category/category-2.jpg";
-import category3 from "../../assets/img/category/category-3.jpg";
-import category4 from "../../assets/img/category/category-4.jpg";
-import category5 from "../../assets/img/category/category-5.jpg";
-import category6 from "../../assets/img/category/category-6.jpg";
-
-import product1 from "../../assets/img/products/product1.jpg";
-import product2 from "../../assets/img/products/product2.jpg";
-import product3 from "../../assets/img/products/product3.jpg";
-import product4 from "../../assets/img/products/product4.jpg";
-import product5 from "../../assets/img/products/product5.jpg";
-import product6 from "../../assets/img/products/product6.jpg";
-
 import { Link } from "react-router-dom";
 import ProductList from "../product-list/ProductList";
+import {
+  banner,
+  deliveryVan,
+  moneyBack,
+  serviceHours,
+  category1,
+  category2,
+  category3,
+  category4,
+  category5,
+  category6,
+  product1,
+  product2,
+  product3,
+  product4,
+  product5,
+  product6,
+} from "../../assets";
+
+const categories = [
+  {
+    name: "Bedroom",
+    image: category1,
+  },
+  {
+    name: "Mattrass",
+    image: category2,
+  },
+  {
+    name: "Outdoor",
+    image: category3,
+  },
+  {
+    name: "Sofa",
+    image: category4,
+  },
+  {
+    name: "Living Room",
+    image: category5,
+  },
+  {
+    name: "Kitchen",
+    image: category6,
+  },
+];
+
+export const productImages = {
+  product1,
+  product2,
+  product3,
+  product4,
+  product5,
+  product6,
+};
 
 export const products = [
   {
@@ -68,45 +102,7 @@ export const products = [
   },
 ];
 
-export const productImages = {
-  product1,
-  product2,
-  product3,
-  product4,
-  product5,
-  product6,
-};
-
 const Home = () => {
-  const getNewAccessToken = useRefreshToken();
-
-  const categories = [
-    {
-      name: "Bedroom",
-      image: category1,
-    },
-    {
-      name: "Mattrass",
-      image: category2,
-    },
-    {
-      name: "Outdoor",
-      image: category3,
-    },
-    {
-      name: "Sofa",
-      image: category4,
-    },
-    {
-      name: "Living Room",
-      image: category5,
-    },
-    {
-      name: "Kitchen",
-      image: category6,
-    },
-  ];
-
   return (
     <section>
       <section

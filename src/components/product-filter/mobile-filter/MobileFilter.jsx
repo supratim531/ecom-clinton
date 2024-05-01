@@ -1,27 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { products } from "../../home/Home";
 
-const MobileFilter = ({ handleMobileFilter }) => {
+const MobileFilter = ({ filterSections, handleMobileFilter }) => {
   const [currentSection, setCurrentSection] = useState(null);
-
-  const filterSections = [
-    {
-      name: "categories",
-      options: ["Sports", "Watch", "Mobile", "Headphone", "Computer"],
-    },
-    {
-      name: "brands",
-      options: ["Apple", "boAt", "SAMSUNG", "Noise", "Keplar", "Jupiter"],
-    },
-    {
-      name: "price",
-      options: [
-        "₹10000 and below",
-        "₹10000 to ₹15000",
-        "₹15000 to ₹25000",
-        "₹25000 and above",
-      ],
-    },
-  ];
 
   useEffect(() => {
     setCurrentSection(filterSections[0]);
@@ -45,15 +26,15 @@ const MobileFilter = ({ handleMobileFilter }) => {
             {currentSection &&
               filterSections.map((filterSection, index) => (
                 <li
-                  onClick={() => setCurrentSection(filterSection)}
                   key={index}
+                  onClick={() => setCurrentSection(filterSection)}
                   className={
-                    filterSection.name === currentSection?.name
+                    filterSection.label === currentSection?.label
                       ? "cursor-pointer px-4 py-3 hover:bg-white text-primary bg-white"
                       : "cursor-pointer px-4 py-3 hover:bg-white hover:text-primary"
                   }
                 >
-                  {filterSection.name}
+                  {filterSection.label}
                 </li>
               ))}
           </ul>
@@ -64,12 +45,14 @@ const MobileFilter = ({ handleMobileFilter }) => {
               currentSection?.options.map((option, index) => (
                 <li key={index} className="flex items-center gap-4">
                   <input
-                    id={option}
-                    name={option}
+                    id={`${currentSection.label}-${index}`}
                     type="checkbox"
                     className="cursor-pointer rounded-sm py-[7px] focus:ring-0 text-primary"
                   />
-                  <label htmlFor={option} className="cursor-pointer">
+                  <label
+                    htmlFor={`${currentSection.label}-${index}`}
+                    className="cursor-pointer"
+                  >
                     {option}
                   </label>
                 </li>
@@ -79,7 +62,7 @@ const MobileFilter = ({ handleMobileFilter }) => {
       </div>
       <div className="p-2 flex justify-end items-center text-sm xs:text-base">
         <div className="flex flex-col leading-4">
-          <strong>90,876</strong>
+          <strong>{products.length}</strong>
           <span className="text-[0.7rem] xs:text-sm">products found</span>
         </div>
         <button className="ml-auto px-8 xs:px-[3.5rem] py-1.5 rounded-sm bg-primary text-white">

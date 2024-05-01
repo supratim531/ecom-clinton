@@ -28,7 +28,10 @@ const Navbar = () => {
       className="font-roboto font-medium p-4 flex justify-between items-center text-[#ddd] bg-secondary"
     >
       <section className="left">
-        <section role="button" className="hamburger block md:hidden">
+        <section
+          role="button"
+          className="hamburger cursor-default block md:hidden"
+        >
           <button onClick={handleOpenSideNavbar}>
             <i className="fa-solid fa-bars text-xl"></i>
           </button>
@@ -38,7 +41,7 @@ const Navbar = () => {
           >
             <button
               onClick={handleCloseSideNavbar}
-              className="absolute top-0 right-2"
+              className="absolute top-2 right-4"
             >
               <i className="fa-solid fa-xmark text-5xl text-white"></i>
             </button>
@@ -49,14 +52,17 @@ const Navbar = () => {
               className="w-[80%] xs:w-[70%] min-[480px]:w-[60%] h-full fixed top-0 left-0 z-[3] duration-300 translate-x-[-200%]"
             >
               {/* sidebar content */}
-              <ul className="p-4 flex flex-col gap-4 text-white">
+              <ul
+                onClick={handleCloseSideNavbar}
+                className="p-8 flex flex-col items-start gap-8 text-white"
+              >
                 <NavItem />
               </ul>
               {/* sidebar content */}
             </aside>
           </section>
         </section>
-        <ul className="nav-menu hidden capitalize md:flex justify-center items-center gap-6 text-white">
+        <ul className="hidden capitalize md:flex justify-center items-center gap-6 text-white">
           <NavItem />
         </ul>
       </section>

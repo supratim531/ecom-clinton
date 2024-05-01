@@ -1,8 +1,28 @@
 import React, { useEffect, useRef, useState } from "react";
 import { products } from "../home/Home";
 import ProductList from "../product-list/ProductList";
-import DesktopFilter from "../product-filter/desktop-filter/DesktopFilter";
 import MobileFilter from "../product-filter/mobile-filter/MobileFilter";
+import DesktopFilter from "../product-filter/desktop-filter/DesktopFilter";
+
+const filterSections = [
+  {
+    label: "categories",
+    options: ["Sports", "Watch", "Mobile", "Headphone", "Computer"],
+  },
+  {
+    label: "brands",
+    options: ["Apple", "boAt", "SAMSUNG", "Noise", "Keplar", "Jupiter"],
+  },
+  {
+    label: "price",
+    options: [
+      "₹10000 and below",
+      "₹10000 to ₹15000",
+      "₹15000 to ₹25000",
+      "₹25000 and above",
+    ],
+  },
+];
 
 const Products = () => {
   const filterRef = useRef();
@@ -29,8 +49,7 @@ const Products = () => {
   }, []);
 
   return (
-    // bg-[#f1f3f6]
-    <section className="flex p-3 gap-3 bg-[#f1f3f6]">
+    <section className="flex p-3 gap-3 bg-[#f0f5ff]">
       {fixedFilterButton && (
         <div className="p-2 fixed bottom-0 left-0 z-[2] w-full flex justify-start bg-white">
           <button
@@ -47,12 +66,19 @@ const Products = () => {
         ref={filterRef}
         className="min-[900px]:hidden fixed top-0 left-0 z-[3] w-full h-[100vh] duration-300 translate-x-[-100%] bg-white"
       >
-        <MobileFilter handleMobileFilter={handleMobileFilter} />
+        {window.innerWidth < 900 && (
+          <MobileFilter
+            filterSections={filterSections}
+            handleMobileFilter={handleMobileFilter}
+          />
+        )}
       </section>
       <section className="hidden min-[900px]:flex max-w-[300px] self-start rounded-sm shadow shadow-slate-300 bg-white">
-        <DesktopFilter />
+        {window.innerWidth >= 900 && (
+          <DesktopFilter filterSections={filterSections} />
+        )}
       </section>
-      <section className="font-roboto w-full min-[900px]:w-auto self-start rounded-sm bg-white">
+      <section className="font-roboto w-full min-[900px]:w-auto self-start rounded-sm shadow shadow-slate-300 bg-white">
         <div className="p-[10px] lg:p-[1rem] flex flex-col items-start gap-2">
           <button
             ref={filterButtonRef}

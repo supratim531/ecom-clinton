@@ -4,9 +4,7 @@ import Navbar from "./navbar/Navbar";
 import { Link } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 import { screenWidth } from "../utils/screen";
-import order from "../assets/svg/order.svg";
-import logo from "../assets/svg/logo.svg";
-import smallLogo from "../assets/logo/android-chrome-192x192.png";
+import { logo, order, smallLogo } from "../assets";
 
 const Header = () => {
   const { auth } = useAuth();

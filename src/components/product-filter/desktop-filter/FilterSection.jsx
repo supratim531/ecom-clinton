@@ -26,12 +26,11 @@ const FilterSection = ({ label, options, expanded = false }) => {
             {options.map((option, index) => (
               <li key={index} className="flex items-center gap-2.5">
                 <input
-                  id={option}
-                  name={option}
+                  id={`${label}-${index}`}
                   type="checkbox"
                   className="cursor-pointer rounded-sm py-[7px] focus:ring-0 text-primary"
                 />
-                <label htmlFor={option} className="cursor-pointer">
+                <label htmlFor={`${label}-${index}`} className="cursor-pointer">
                   {option}
                 </label>
               </li>
