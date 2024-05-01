@@ -6,7 +6,7 @@ const ProductList = ({ ariaLabel, label, products }) => {
   return (
     <section
       aria-label={ariaLabel}
-      className="product-list-container px-[10px] sm:px-[1rem] sm:container sm:mx-auto my-16"
+      className="product-list-container px-[10px] sm:px-[1rem] sm:container sm:mx-auto"
     >
       <h2 className="mb-4 uppercase font-bold xs:font-medium text-center min-[480px]:text-start text-sm xs:text-lg min-[480px]:text-2xl text-secondary">
         {label}

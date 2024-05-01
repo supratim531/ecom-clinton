@@ -288,7 +288,7 @@ const Product = () => {
       {/* product-detail */}
 
       {/* related products */}
-      <section>
+      <section className="py-[2rem]">
         <ProductList
           ariaLabel={"View related products"}
           label={"Related Products"}

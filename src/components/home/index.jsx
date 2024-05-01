@@ -66,6 +66,48 @@ export const products = [
     product_discount: 0,
     image: product6,
   },
+  {
+    product_brand: "Brand-A",
+    product_name: "Product 6",
+    product_price: 179,
+    product_discount: 0,
+    image: product6,
+  },
+  {
+    product_brand: "Brand-A",
+    product_name: "Product 6",
+    product_price: 179,
+    product_discount: 0,
+    image: product6,
+  },
+  {
+    product_brand: "Brand-A",
+    product_name: "Product 6",
+    product_price: 179,
+    product_discount: 0,
+    image: product6,
+  },
+  {
+    product_brand: "Brand-A",
+    product_name: "Product 6",
+    product_price: 179,
+    product_discount: 0,
+    image: product6,
+  },
+  {
+    product_brand: "Brand-A",
+    product_name: "Product 6",
+    product_price: 179,
+    product_discount: 0,
+    image: product6,
+  },
+  {
+    product_brand: "Brand-A",
+    product_name: "Product 6",
+    product_price: 179,
+    product_discount: 0,
+    image: product6,
+  },
 ];
 
 export const productImages = {

@@ -13,6 +13,7 @@ import Register from "../components/Register";
 import Page404 from "../components/Page404";
 import { ProtectedRoute } from "./ProtectedRoute";
 import Product from "../components/product";
+import Products from "../components/products/index";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -20,6 +21,7 @@ const router = createBrowserRouter(
       {/* public routes */}
       <Route index element={<Home />} />
       <Route path="product" element={<Product />} />
+      <Route path="products" element={<Products />} />
       <Route path="login" element={<Login />} />
       <Route path="register" element={<Register />} />
 
