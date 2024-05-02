@@ -1,19 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const NavItem = () => {
+const NavItem = ({
+  className = "text-2xl md:text-base hover:text-primary",
+}) => {
   return (
     <>
-      <li className="text-2xl md:text-base hover:text-primary">
+      <li className={className}>
         <Link to={""}>Home</Link>
       </li>
-      <li className="text-2xl md:text-base hover:text-primary">
+      <li className={className}>
         <Link to={"about"}>About</Link>
       </li>
-      <li className="text-2xl md:text-base hover:text-primary">
+      <li className={className}>
         <Link to={"contact"}>Contact</Link>
       </li>
-      <li className="text-2xl md:text-base hover:text-primary">
+      <li className={className}>
         <Link to={"products"}>Products</Link>
       </li>
     </>

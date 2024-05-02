@@ -1,10 +1,10 @@
-import React, { useRef } from "react";
+import React, { forwardRef, useImperativeHandle, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useLogout } from "../../hooks/useLogout";
 import { useAuth } from "../../hooks/useAuth";
 import NavItem from "./NavItem";
 
-const Navbar = () => {
+const Navbar = ({}, ref) => {
   const logout = useLogout();
   const { auth } = useAuth();
 
@@ -21,6 +21,10 @@ const Navbar = () => {
     sideNavbarWrapperRef.current.classList.add("invisible", "opacity-0");
   };
 
+  useImperativeHandle(ref, () => ({
+    handleOpenSideNavbar: () => handleOpenSideNavbar(),
+  }));
+
   return (
     <nav
       role="menubar"
@@ -28,12 +32,9 @@ const Navbar = () => {
       className="font-roboto font-medium p-4 flex justify-between items-center text-[#ddd] bg-secondary"
     >
       <section className="left">
-        <section
-          role="button"
-          className="hamburger cursor-default block md:hidden"
-        >
-          <button onClick={handleOpenSideNavbar}>
-            <i className="fa-solid fa-bars text-xl"></i>
+        <section className="cursor-default block md:hidden">
+          <button onClick={handleOpenSideNavbar} className="hamburger">
+            <i className="fa-solid fa-bars text-2xl"></i>
           </button>
           <section
             ref={sideNavbarWrapperRef}
@@ -52,18 +53,15 @@ const Navbar = () => {
               className="w-[80%] xs:w-[70%] min-[480px]:w-[60%] h-full fixed top-0 left-0 z-[3] duration-300 translate-x-[-200%]"
             >
               {/* sidebar content */}
-              <ul
-                onClick={handleCloseSideNavbar}
-                className="p-8 flex flex-col items-start gap-8 text-white"
-              >
+              <ul className="p-8 h-full w-full flex flex-col items-start gap-8 text-white">
                 <NavItem />
               </ul>
               {/* sidebar content */}
             </aside>
           </section>
         </section>
-        <ul className="hidden capitalize md:flex justify-center items-center gap-6 text-white">
-          <NavItem />
+        <ul className="hidden capitalize md:flex justify-center items-center gap-6">
+          <NavItem className="font-medium text-lg text-white hover:text-primary" />
         </ul>
       </section>
       <section className="right flex justify-center items-center gap-4">
@@ -104,4 +102,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default forwardRef(Navbar);
