@@ -78,7 +78,7 @@ const Products = () => {
           <DesktopFilter filterSections={filterSections} />
         )}
       </section>
-      <section className="font-roboto w-full min-[900px]:w-auto self-start rounded-sm shadow shadow-slate-300 bg-white">
+      <section className="font-roboto w-full rounded-sm shadow shadow-slate-300 bg-white">
         <div className="p-[10px] lg:p-[1rem] flex flex-col items-start gap-2">
           <button
             ref={filterButtonRef}
