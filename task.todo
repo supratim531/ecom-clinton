@@ -3,3 +3,10 @@ Task - 04/16/2024
   2. Hide Login & Register route from authorized account. ✅
   3. Apply jwt-decode to RequireAuth. ✅
     3.1. The functionality of jwt-decode applied on PersistLogin and later on moved RequireAuth & PersistLogin in deprecated folder and replaced with ProtectedRoute. ✅
+
+Pending task towards finalization
+  1. Fix search bar at the top after scrolling along with navigation & icons for user profile. ❌
+  2. Implement UI for user profile, addresses, orders, checkout, cart & wishlist. ❌
+  3. Authorization glitch at the header section due to protected routing. ❌
+  4. Implement logic for product-filters. ❌
+  5. Add redux for the whole application. ❌
