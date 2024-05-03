@@ -45,7 +45,7 @@ const Product = () => {
           >
             <section className="text-[0.85rem] xs:text-base">
               {/* [text-shadow:1px_1px_2px_black] */}
-              <h2 className="mb-2 uppercase text-xl xs:text-2xl min-[480px]:text-3xl lg:text-4xl font-semibold text-slate-800">
+              <h2 className="mb-2 uppercase font-medium text-lg min-[480px]:text-xl lg:text-2xl text-slate-800">
                 {"Seventh Heaven Tokyo 3 Seater Sofa"}
               </h2>
               <div className="space-y-2">
@@ -69,12 +69,11 @@ const Product = () => {
                 </p>
               </div>
               <div className="flex items-baseline mb-1 space-x-2 font-roboto mt-4">
-                <p className="text-base xs:text-lg text-primary font-semibold">
-                  $45.00
+                <p className="text-2xl md:text-3xl text-primary font-semibold">
+                  ₹{+(1550 - 1550 * (40 / 100)).toFixed(0)}
                 </p>
-                <p className="text-[0.75rem] xs:text-base text-gray-400 line-through">
-                  $55.00
-                </p>
+                <p className="text-gray-400 line-through">₹1550</p>
+                <p className="font-semibold text-[#26a541]">{40}% off</p>
               </div>
               <p className="mt-4 text-gray-600">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
@@ -232,7 +231,7 @@ const Product = () => {
               </div>
             </section>
             <section>
-              <h3 className="font-roboto font-medium text-base xs:text-lg text-secondary">
+              <h3 className="font-medium text-base xs:text-lg text-secondary">
                 Product details
               </h3>
               <div className="w-full h-[0.5px] my-4 bg-slate-200"></div>

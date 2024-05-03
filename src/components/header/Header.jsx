@@ -1,11 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
-import SearchBar from "../SearchBar";
-import Navbar from "../navbar/Navbar";
+import SearchBar from "./SearchBar";
+import Navbar from "./navbar/Navbar";
 import { useAuth } from "../../hooks/useAuth";
 import { screenWidth } from "../../utils/screen";
 import { logo, smallLogo } from "../../assets";
 import UserProfile from "./UserProfile";
-import NavItem from "../navbar/NavItem";
+import NavItem from "./navbar/NavItem";
+import Hamburger from "./Hamburger";
 
 const Header = () => {
   const { auth } = useAuth();
@@ -31,14 +32,11 @@ const Header = () => {
         <div className="fixed top-0 left-0 z-[2] w-full flex flex-col justify-start shadow shadow-gray-400 bg-white">
           <div className="top px-3 py-2 flex justify-between items-center gap-10">
             <section className="navigation">
-              <button
-                onClick={navbarRef.current.handleOpenSideNavbar}
-                className="hamburger block md:hidden"
-              >
-                <i className="fa-solid fa-bars text-2xl"></i>
-              </button>
+              <div className="block md:hidden">
+                <Hamburger onClick={navbarRef.current.handleOpenSideNavbar} />
+              </div>
               <ul className="hidden capitalize md:flex justify-center items-center gap-6">
-                <NavItem className="font-roboto font-medium text-lg text-secondary hover:text-primary" />
+                <NavItem listClassName="font-roboto font-medium text-lg text-secondary hover:text-primary" />
               </ul>
             </section>
             <div className="hidden lg:block search-section flex-grow">

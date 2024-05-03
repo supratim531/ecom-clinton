@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { products } from "../../home/Home";
+import { products } from "../../../home/Home";
 
 const MobileFilter = ({ filterSections, handleMobileFilter }) => {
   const [currentSection, setCurrentSection] = useState(null);
@@ -20,7 +20,7 @@ const MobileFilter = ({ filterSections, handleMobileFilter }) => {
         </button>
         {false && <button className="">Clear Filters</button>}
       </section>
-      <div className="flex flex-grow">
+      <section className="flex flex-grow">
         <aside className="w-[40%] sm:w-[35%] text-secondary bg-gray-200">
           <ul className="w-full capitalize flex flex-col">
             {currentSection &&
@@ -59,8 +59,8 @@ const MobileFilter = ({ filterSections, handleMobileFilter }) => {
               ))}
           </ul>
         </section>
-      </div>
-      <div className="p-2 flex justify-end items-center text-sm xs:text-base">
+      </section>
+      <section className="p-2 flex justify-end items-center text-sm xs:text-base">
         <div className="flex flex-col leading-4">
           <strong>{products.length}</strong>
           <span className="text-[0.7rem] xs:text-sm">products found</span>
@@ -68,7 +68,7 @@ const MobileFilter = ({ filterSections, handleMobileFilter }) => {
         <button className="ml-auto px-8 xs:px-[3.5rem] py-1.5 rounded-sm bg-primary text-white">
           Apply
         </button>
-      </div>
+      </section>
     </section>
   );
 };

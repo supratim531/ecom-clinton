@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { products } from "../home/Home";
 import ProductList from "../product-list/ProductList";
-import MobileFilter from "../product-filter/mobile-filter/MobileFilter";
-import DesktopFilter from "../product-filter/desktop-filter/DesktopFilter";
+import MobileFilter from "./product-filter/mobile-filter/MobileFilter";
+import DesktopFilter from "./product-filter/desktop-filter/DesktopFilter";
 
 const filterSections = [
   {
@@ -49,9 +49,9 @@ const Products = () => {
   }, []);
 
   return (
-    <section className="flex p-3 gap-3 bg-[#f0f5ff]">
+    <section className="flex p-3 pb-[2rem] gap-3 bg-[#f0f5ff]">
       {fixedFilterButton && (
-        <div className="p-2 fixed bottom-0 left-0 z-[2] w-full flex justify-start bg-white">
+        <section className="p-2 fixed bottom-0 left-0 z-[2] w-full flex justify-start bg-white">
           <button
             onClick={handleMobileFilter}
             className="min-[900px]:hidden px-2 py-1 flex items-center gap-2 font-medium rounded-sm text-secondary bg-slate-200 hover:bg-slate-300"
@@ -59,7 +59,7 @@ const Products = () => {
             <i className="fa-solid fa-filter text-sm"></i>
             <span>Filter</span>
           </button>
-        </div>
+        </section>
       )}
 
       <section
@@ -79,7 +79,7 @@ const Products = () => {
         )}
       </section>
       <section className="font-roboto w-full rounded-sm shadow shadow-slate-300 bg-white">
-        <div className="p-[10px] lg:p-[1rem] flex flex-col items-start gap-2">
+        <section className="p-[10px] lg:p-[1rem] flex flex-col items-start gap-2">
           <button
             ref={filterButtonRef}
             onClick={handleMobileFilter}
@@ -100,7 +100,7 @@ const Products = () => {
               <option value="latest">Latest product</option>
             </select>
           </div>
-        </div>
+        </section>
         <section className="py-[1rem]">
           <ProductList
             ariaLabel={"View all products"}
