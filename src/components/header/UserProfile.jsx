@@ -4,7 +4,10 @@ import { order } from "../../assets";
 
 const UserProfile = () => {
   return (
-    <div className="flex items-center space-x-4">
+    <section
+      aria-label="User profile menu"
+      className="flex items-center space-x-4"
+    >
       <Link
         to={"/login"}
         className="cursor-pointer text-center text-gray-700 hover:text-primary transition relative"
@@ -31,7 +34,7 @@ const UserProfile = () => {
       </Link>
       <section
         role="tooltip"
-        aria-label="User profile"
+        aria-label="Profile options"
         className="cursor-pointer group relative text-center transition text-gray-700 hover:text-primary"
       >
         <div className="text-base sm:text-xl lg:text-2xl">
@@ -76,7 +79,7 @@ const UserProfile = () => {
           </ul>
         </section>
       </section>
-    </div>
+    </section>
   );
 };
 

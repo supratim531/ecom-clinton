@@ -2,11 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 import SearchBar from "./SearchBar";
 import Navbar from "./navbar/Navbar";
 import { useAuth } from "../../hooks/useAuth";
-import { screenWidth } from "../../utils/screen";
-import { logo, smallLogo } from "../../assets";
 import UserProfile from "./UserProfile";
 import NavItem from "./navbar/NavItem";
 import Hamburger from "./Hamburger";
+import Logo from "./Logo";
 
 const Header = () => {
   const { auth } = useAuth();
@@ -55,15 +54,10 @@ const Header = () => {
       )}
 
       <Navbar ref={navbarRef} />
-      <div className="top p-4 flex justify-between items-center gap-10">
-        <div className="logo-section">
-          <img
-            src={screenWidth >= 370 ? logo : smallLogo}
-            alt="Logo"
-            className={screenWidth >= 370 ? "w-auto" : "w-[32px]"}
-            width={screenWidth >= 370 ? 122 : 192}
-            height={screenWidth >= 370 ? 23 : 192}
-          />
+
+      <section className="top p-4 flex justify-between items-center gap-10 bg-red-400">
+        <div aria-label="Website logo" className="logo">
+          <Logo />
         </div>
         <div className="hidden lg:block search-section flex-grow">
           <SearchBar />
@@ -73,7 +67,7 @@ const Header = () => {
             <UserProfile />
           </div>
         )}
-      </div>
+      </section>
       <div className="bottom block lg:hidden pt-0 p-4">
         <SearchBar />
       </div>
