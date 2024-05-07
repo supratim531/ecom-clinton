@@ -12,8 +12,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New";
 }
 
 @layer base {
@@ -29,4 +28,51 @@ code {
   h6 {
     @apply font-roboto;
   }
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltip-text {
+  /* white-space: nowrap; */
+  visibility: hidden;
+  max-width: max-content;
+  height: auto;
+  background-color: #008cff;
+  color: #fff;
+  text-align: center;
+  border-radius: 3px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip .tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent;
+  border-top-color: #008cff;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.tooltip:hover .tooltip-text::after {
+  opacity: 1;
 }
