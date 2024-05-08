@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
-import { useRefreshToken } from "../hooks/useRefreshToken";
-import { useAuth } from "../hooks/useAuth";
+import { useAuth, useRefreshToken } from "../hooks";
 
 /**
  * @author Supratim Majumder
@@ -40,6 +39,12 @@ export const ProtectedRoute = () => {
   useEffect(() => {
     console.log("loading:", isLoading);
     console.log("accessToken:", auth?.accessToken);
+
+    if (auth?.user?.exp) {
+      +auth?.user?.exp < +(new Date().valueOf() / 1000).toFixed()
+        ? console.log("Access token expired")
+        : console.log("Access token alive");
+    }
 
     // eslint-disable-next-line
   }, [isLoading]);

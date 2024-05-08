@@ -1,11 +1,11 @@
-import { useAuth } from "./useAuth";
+import { useAuth } from "./";
 import { useLocation, useNavigate } from "react-router-dom";
 
 /**
  * @copyright Dave Gray
  * @author Supratim Majumder
  */
-export const useLogout = () => {
+const useLogout = () => {
   const { setAuth } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
@@ -20,3 +20,5 @@ export const useLogout = () => {
 
   return logout;
 };
+
+export default useLogout;

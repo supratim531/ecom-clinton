@@ -1,24 +1,24 @@
-import React, { useEffect, useRef, useState } from "react";
-import SearchBar from "./SearchBar";
-import Navbar from "./navbar/Navbar";
-import { useAuth } from "../../hooks/useAuth";
-import UserProfile from "./UserProfile";
-import NavItems from "./navbar/NavItems";
-import Hamburger from "./Hamburger";
+import React, { useRef, useState, useEffect } from "react";
+import { useAuth } from "../../hooks";
 import Logo from "./Logo";
+import Navbar from "./navbar/Navbar";
+import NavItems from "./navbar/NavItems";
+import SearchBar from "./SearchBar";
+import Hamburger from "./Hamburger";
+import UserProfile from "./user-profile/UserProfile";
 
 const Header = () => {
   const { auth } = useAuth();
   const headerRef = useRef();
   const navbarRef = useRef();
-  const [fixedSearchBar, setFixedSearchBar] = useState(false);
+  const [fixedHeader, setFixedHeader] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         // console.log(entry.target);
         // console.log(entry.isIntersecting);
-        setFixedSearchBar(!entry.isIntersecting);
+        setFixedHeader(!entry.isIntersecting);
       });
     });
 
@@ -27,57 +27,64 @@ const Header = () => {
 
   return (
     <header ref={headerRef} className="flex flex-col bg-[#f0f5ff]">
-      {fixedSearchBar && (
-        <div className="fixed top-0 left-0 z-[2] w-full flex flex-col justify-start shadow shadow-gray-400 bg-white">
-          <div className="top px-3 py-2 flex justify-between items-center gap-10">
-            <section className="navigation">
-              <div className="block md:hidden">
-                <Hamburger onClick={navbarRef.current.handleOpenSideNavbar} />
+      {fixedHeader && (
+        <section className="fixed-header fixed top-0 left-0 z-[2] w-full shadow shadow-gray-400 bg-white">
+          <section className="p-3 flex flex-col gap-3">
+            <section className="flex justify-between items-center gap-10">
+              <div aria-label="Primary navigation">
+                <div className="block md:hidden">
+                  <Hamburger onClick={navbarRef.current.handleOpenSideNavbar} />
+                </div>
+                <div className="hidden md:block">
+                  <NavItems
+                    wrapperClassName={
+                      "capitalize flex justify-center items-center gap-6"
+                    }
+                    navItemClassName={
+                      "font-medium text-secondary hover:text-primary"
+                    }
+                  />
+                </div>
               </div>
-              <div className="hidden md:block">
-                <NavItems
-                  wrapperClassName={
-                    "capitalize flex justify-center items-center gap-6"
-                  }
-                  navItemClassName={
-                    "font-medium text-secondary hover:text-primary"
-                  }
-                />
+              <div
+                aria-label="Search for Products, Brands and More"
+                className="hidden lg:block flex-grow"
+              >
+                <SearchBar />
               </div>
+              {auth?.user && <UserProfile />}
             </section>
-            <div className="hidden lg:block search-section flex-grow">
+            <section
+              aria-label="Search for Products, Brands and More"
+              className="block lg:hidden"
+            >
               <SearchBar />
-            </div>
-            {auth?.user && (
-              <div className="user-profile-section">
-                <UserProfile />
-              </div>
-            )}
-          </div>
-          <div className="bottom block lg:hidden px-3 pb-2">
-            <SearchBar />
-          </div>
-        </div>
+            </section>
+          </section>
+        </section>
       )}
 
       <Navbar ref={navbarRef} />
-
-      <section className="top p-4 flex justify-between items-center gap-10 bg-red-400">
-        <div aria-label="Website logo" className="logo">
-          <Logo />
-        </div>
-        <div className="hidden lg:block search-section flex-grow">
-          <SearchBar />
-        </div>
-        {auth?.user && (
-          <div className="user-profile-section">
-            <UserProfile />
+      <section className="p-3 flex flex-col gap-3">
+        <section className="flex justify-between items-center gap-10">
+          <div aria-label="Website logo" className="logo">
+            <Logo />
           </div>
-        )}
+          <div
+            aria-label="Search for Products, Brands and More"
+            className="hidden lg:block flex-grow"
+          >
+            <SearchBar />
+          </div>
+          {auth?.user && <UserProfile />}
+        </section>
+        <section
+          aria-label="Search for Products, Brands and More"
+          className="block lg:hidden"
+        >
+          <SearchBar />
+        </section>
       </section>
-      <div className="bottom block lg:hidden pt-0 p-4">
-        <SearchBar />
-      </div>
     </header>
   );
 };

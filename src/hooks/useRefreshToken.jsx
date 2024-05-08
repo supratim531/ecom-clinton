@@ -1,8 +1,8 @@
 import { jwtDecode } from "jwt-decode";
-import { useAuth } from "./useAuth";
+import { useAuth } from "./";
 import axios from "../axios/axios";
 
-export const useRefreshToken = () => {
+const useRefreshToken = () => {
   const { setAuth } = useAuth();
 
   const getNewAccessToken = async () => {
@@ -28,3 +28,5 @@ export const useRefreshToken = () => {
 
   return getNewAccessToken;
 };
+
+export default useRefreshToken;

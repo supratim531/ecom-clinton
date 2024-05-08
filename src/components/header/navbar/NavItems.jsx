@@ -38,27 +38,6 @@ const NavItems = ({ onClickNavItem, wrapperClassName, navItemClassName }) => {
           </li>
         ) : null
       )}
-
-      {/* <li onClick={onClickListItem} className={listClassName}>
-        <Link className={linkClassName} to={""}>
-          Home
-        </Link>
-      </li>
-      <li onClick={onClickListItem} className={listClassName}>
-        <Link className={linkClassName} to={"about"}>
-          About
-        </Link>
-      </li>
-      <li onClick={onClickListItem} className={listClassName}>
-        <Link className={linkClassName} to={"contact"}>
-          Contact
-        </Link>
-      </li>
-      <li onClick={onClickListItem} className={listClassName}>
-        <Link className={linkClassName} to={"products"}>
-          Products
-        </Link>
-      </li> */}
     </ul>
   );
 };

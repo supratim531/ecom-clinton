@@ -6,7 +6,7 @@ import AuthContext from "../contexts/AuthContext";
  * @author Supratim Majumder
  * @description It gives us state of AuthContext in one go
  */
-export const useAuth = () => {
+const useAuth = () => {
   const { auth } = useContext(AuthContext);
   useDebugValue(auth, (auth) => {
     return auth?.accessToken ? "Logged In" : "Logged Out";
@@ -14,3 +14,5 @@ export const useAuth = () => {
 
   return useContext(AuthContext);
 };
+
+export default useAuth;

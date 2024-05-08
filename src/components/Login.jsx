@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useNavigate, useLocation, Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import axios from "../axios/axios";
-import { useAuth } from "../hooks/useAuth";
+import { useAuth } from "../hooks";
 
 const Login = () => {
   const errorRef = useRef();
@@ -208,7 +208,7 @@ const Login = () => {
                       fill="currentFill"
                     />
                   </svg>
-                  <span class="sr-only">Loading...</span>
+                  <span className="sr-only">Loading...</span>
                 </div>
               ) : (
                 <div>Login</div>

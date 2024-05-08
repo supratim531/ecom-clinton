@@ -13,7 +13,7 @@ const initAbortController = () =>
  * @description It aborts the request (async axios request) when any related component unmounts
  * @link https://medium.com/doctolib/react-stop-checking-if-your-component-is-mounted-3bb2568a4934
  */
-export const useAbortController = (shouldAutoRestart = false) => {
+const useAbortController = (shouldAutoRestart = false) => {
   const abortController = useRef(initAbortController());
 
   useEffect(() => {
@@ -30,3 +30,5 @@ export const useAbortController = (shouldAutoRestart = false) => {
 
   return abortController.current;
 };
+
+export default useAbortController;
