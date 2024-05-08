@@ -3,7 +3,7 @@ import SearchBar from "./SearchBar";
 import Navbar from "./navbar/Navbar";
 import { useAuth } from "../../hooks/useAuth";
 import UserProfile from "./UserProfile";
-import NavItem from "./navbar/NavItem";
+import NavItems from "./navbar/NavItems";
 import Hamburger from "./Hamburger";
 import Logo from "./Logo";
 
@@ -34,9 +34,16 @@ const Header = () => {
               <div className="block md:hidden">
                 <Hamburger onClick={navbarRef.current.handleOpenSideNavbar} />
               </div>
-              <ul className="hidden capitalize md:flex justify-center items-center gap-6">
-                <NavItem listClassName="font-roboto font-medium text-lg text-secondary hover:text-primary" />
-              </ul>
+              <div className="hidden md:block">
+                <NavItems
+                  wrapperClassName={
+                    "capitalize flex justify-center items-center gap-6"
+                  }
+                  navItemClassName={
+                    "font-medium text-secondary hover:text-primary"
+                  }
+                />
+              </div>
             </section>
             <div className="hidden lg:block search-section flex-grow">
               <SearchBar />

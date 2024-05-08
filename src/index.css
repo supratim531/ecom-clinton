@@ -5,6 +5,11 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg-primary: #fd3d57;
+  --bg-secondary: #1f2937;
+}
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -30,6 +35,10 @@ code {
   }
 }
 
+.active {
+  color: var(--bg-primary);
+}
+
 .tooltip {
   position: relative;
   display: inline-block;
@@ -40,7 +49,7 @@ code {
   visibility: hidden;
   max-width: max-content;
   height: auto;
-  background-color: #008cff;
+  background-color: var(--bg-primary);
   color: #fff;
   text-align: center;
   border-radius: 3px;
@@ -69,7 +78,7 @@ code {
   border-width: 5px;
   border-style: solid;
   border-color: transparent;
-  border-top-color: #008cff;
+  border-top-color: var(--bg-primary);
   transition: opacity 0.3s ease-in-out;
 }
 
