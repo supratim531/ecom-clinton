@@ -14,7 +14,7 @@ const ProfileMenu = () => {
       label: "Cart",
       icon: <i className="fa-solid fa-cart-shopping"></i>,
       count: 3,
-      countClassName: "-right-2",
+      countClassName: "-right-3",
       path: "/login",
     },
   ];
