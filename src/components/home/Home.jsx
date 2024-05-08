@@ -1,6 +1,6 @@
 import "./Home.css";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ProductList from "../product-list/ProductList";
 import {
   banner,
@@ -59,43 +59,43 @@ export const productImages = {
 
 export const products = [
   {
-    product_brand: "Brand-A",
-    product_name: "Product 1",
+    product_brand: "Indian Bharat",
+    product_name: "Bharat Lifestyle Deno Fabric 3 Seater Sofa",
     product_price: 899,
     product_discount: 12,
     image: product1,
   },
   {
-    product_brand: "Brand-C",
-    product_name: "Product 2",
+    product_brand: "Alpana Furniture",
+    product_name: "BRIGHTWOOD Solid Sheesham Wood Three Seater Sofa",
     product_price: 2500,
     product_discount: 11,
     image: product2,
   },
   {
-    product_brand: "Brand-X",
-    product_name: "Product 3",
+    product_brand: "Woodland",
+    product_name: "LIVEWELL Premium Quality Jute Fabric 3 Seater Sofa",
     product_price: 1299,
     product_discount: 4,
     image: product3,
   },
   {
-    product_brand: "Brand-X",
-    product_name: "Product 4",
+    product_brand: "Indian Bharat",
+    product_name: "Divine Arts Solid Sheesham Wood 5 Seater Sofa",
     product_price: 1199,
     product_discount: 4,
     image: product4,
   },
   {
-    product_brand: "Brand-C",
-    product_name: "Product 5",
+    product_brand: "Kakoli Furniture",
+    product_name: "Artesia 3 Seater Sectional Leatherette Sofa",
     product_price: 3999,
     product_discount: 45,
     image: product5,
   },
   {
-    product_brand: "Brand-A",
-    product_name: "Product 6",
+    product_brand: "Woodland",
+    product_name: "CARLTON LONDON Olivia LHS Fabric 6 Seater Sofa",
     product_price: 179,
     product_discount: 0,
     image: product6,
@@ -103,6 +103,8 @@ export const products = [
 ];
 
 const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <section>
       <section
@@ -125,6 +127,7 @@ const Home = () => {
           <button
             tabIndex={0}
             aria-label="Shop now"
+            onClick={() => navigate("/products")}
             className="text-[0.8rem] sm:text-base px-6 py-3 font-medium rounded transition border border-primary hover:text-primary hover:bg-transparent text-white bg-primary"
           >
             Shop Now

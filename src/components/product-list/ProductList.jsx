@@ -1,6 +1,5 @@
 import "./ProductList.css";
 import React from "react";
-import { Link } from "react-router-dom";
 import ProductCard from "./ProductCard";
 
 const ProductList = ({ ariaLabel, label, products }) => {
