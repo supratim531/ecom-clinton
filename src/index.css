@@ -45,7 +45,7 @@ code {
 }
 
 .tooltip .tooltip-text {
-  /* white-space: nowrap; */
+  white-space: nowrap;
   visibility: hidden;
   max-width: max-content;
   height: auto;

@@ -78,8 +78,8 @@ const Products = () => {
           <DesktopFilter filterSections={filterSections} />
         )}
       </section>
-      <section className="font-roboto w-full rounded-sm shadow shadow-slate-300 bg-white">
-        <section className="p-[10px] lg:p-[1rem] flex flex-col items-start gap-2">
+      <section className="w-full rounded-sm shadow shadow-slate-300 bg-white">
+        <section className="font-roboto p-[10px] lg:p-[1rem] flex flex-col items-start gap-2">
           <button
             ref={filterButtonRef}
             onClick={handleMobileFilter}
