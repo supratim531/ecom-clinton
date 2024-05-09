@@ -1,6 +1,6 @@
 import React from "react";
 import ProductList from "../components/product-list/ProductList";
-import { products, productImages } from "../components/home/Home";
+import { products, productImages } from "../pages/Home";
 import { Link } from "react-router-dom";
 import CardsContainer from "../components/shared/CardsContainer";
 

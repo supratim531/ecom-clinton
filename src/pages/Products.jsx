@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { products } from "../components/home/Home";
+import { products } from "../pages/Home";
 import CardsContainer from "../components/shared/CardsContainer";
 import ProductList from "../components/product-list/ProductList";
 import MobileFilter from "../components/product-filter/mobile-filter/MobileFilter";

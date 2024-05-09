@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { products } from "../../home/Home";
+import { products } from "../../../pages/Home";
 
 const MobileFilter = ({ filterSections, handleMobileFilter }) => {
   const [currentSection, setCurrentSection] = useState(null);
