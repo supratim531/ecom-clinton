@@ -21,29 +21,29 @@ const ProductCard = ({ product }) => {
             text={"View"}
             // className="[&>span]:!bg-secondary [&>span]:after:!border-t-secondary"
           >
-            <Link
+            <button
+              role="link"
               tabIndex={0}
+              onClick={() => navigate("/login")}
               aria-label={`View ${product.product_name}`}
-              role="button"
-              to={"/product"}
-              className="text-white text-lg w-9 h-9 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+              className="text-white text-lg w-9 h-9 rounded-full flex items-center justify-center transition hover:bg-gray-800 bg-primary"
             >
               <i className="fa-solid fa-eye"></i>
-            </Link>
+            </button>
           </Tooltip>
           <Tooltip
             text={"Add to cart"}
             // className="[&>span]:!bg-secondary [&>span]:after:!border-t-secondary"
           >
-            <Link
+            <button
+              role="link"
               tabIndex={0}
+              onClick={() => navigate("/login")}
               aria-label={`Add ${product.product_name} to cart`}
-              role="button"
-              to={"/login"}
-              className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+              className="text-white text-lg w-9 h-9 rounded-full flex items-center justify-center transition hover:bg-gray-800 bg-primary"
             >
               <i className="fa-solid fa-cart-shopping"></i>
-            </Link>
+            </button>
           </Tooltip>
         </div>
       </div>
