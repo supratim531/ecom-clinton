@@ -44,7 +44,7 @@ const Product = () => {
           >
             <section className="text-[0.85rem] xs:text-base">
               {/* [text-shadow:1px_1px_2px_black] */}
-              <h2 className="mb-2 uppercase font-medium text-lg min-[480px]:text-xl lg:text-2xl text-slate-800">
+              <h2 className="mb-2 font-medium text-lg min-[480px]:text-xl lg:text-2xl text-slate-800">
                 {"Seventh Heaven Tokyo 3 Seater Sofa"}
               </h2>
               <div className="space-y-2">
