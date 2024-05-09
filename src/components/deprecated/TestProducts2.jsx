@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { usePrivateAxios } from "../hooks/usePrivateAxios";
+import { usePrivateAxios } from "../../hooks/usePrivateAxios";
 import { CanceledError } from "axios";
-import { useAbortController } from "../hooks/useAbortController";
+import { useAbortController } from "../../hooks/useAbortController";
 
 /**
+ * @deprecated
  * @author Supratim Majumder
  * @description This component renders all products and uses a custom react hook @function useAbortController
  */
-const Products = () => {
+const TestProducts2 = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const privateAxios = usePrivateAxios();
@@ -56,4 +57,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default TestProducts2;

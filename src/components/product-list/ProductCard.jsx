@@ -22,11 +22,10 @@ const ProductCard = ({ product }) => {
             // className="[&>span]:!bg-secondary [&>span]:after:!border-t-secondary"
           >
             <button
-              role="link"
               tabIndex={0}
-              onClick={() => navigate("/login")}
+              onClick={() => navigate("/product")}
               aria-label={`View ${product.product_name}`}
-              className="text-white text-lg w-9 h-9 rounded-full flex items-center justify-center transition hover:bg-gray-800 bg-primary"
+              className="text-white text-lg w-9 h-9 rounded-full flex items-center justify-center transition hover:bg-secondary bg-primary"
             >
               <i className="fa-solid fa-eye"></i>
             </button>
@@ -36,11 +35,10 @@ const ProductCard = ({ product }) => {
             // className="[&>span]:!bg-secondary [&>span]:after:!border-t-secondary"
           >
             <button
-              role="link"
               tabIndex={0}
               onClick={() => navigate("/login")}
               aria-label={`Add ${product.product_name} to cart`}
-              className="text-white text-lg w-9 h-9 rounded-full flex items-center justify-center transition hover:bg-gray-800 bg-primary"
+              className="text-white text-lg w-9 h-9 rounded-full flex items-center justify-center transition hover:bg-secondary bg-primary"
             >
               <i className="fa-solid fa-cart-shopping"></i>
             </button>

@@ -8,7 +8,7 @@ import { CanceledError } from "axios";
  * @author Supratim Majumder
  * @description This component renders all products and uses a customized AbortController mechanism (manual implementation)
  */
-const Products = () => {
+const TestProducts1 = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const privateAxios = usePrivateAxios();
@@ -65,4 +65,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default TestProducts1;

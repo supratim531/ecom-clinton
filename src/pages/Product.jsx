@@ -1,7 +1,8 @@
 import React from "react";
-import ProductList from "../product-list/ProductList";
-import { products, productImages } from "../home/Home";
+import ProductList from "../components/product-list/ProductList";
+import { products, productImages } from "../components/home/Home";
 import { Link } from "react-router-dom";
+import CardsContainer from "../components/shared/CardsContainer";
 
 const Product = () => {
   return (
@@ -21,22 +22,20 @@ const Product = () => {
               />
             </section>
             <section className="hidden font-roboto font-medium py-4 lg:flex gap-4 text-lg bg-white">
-              <Link
-                role="button"
+              <button
                 aria-label="Add this to cart"
                 className="w-[50%] uppercase py-4 flex justify-center items-center gap-2 font-medium rounded transition hover:bg-transparent hover:text-primary bg-primary border border-primary text-white"
               >
-                <i className="fa-solid fa-cart-shopping" />
+                <i className="fa-solid fa-cart-shopping"></i>
                 <span>Add to cart</span>
-              </Link>
-              <Link
-                role="button"
+              </button>
+              <button
                 aria-label="Buy this right now"
                 className="w-[50%] py-4 uppercase flex justify-center items-center gap-2 font-medium rounded transition border border-secondary text-secondary hover:text-primary hover:border-primary"
               >
-                <i className="fa-solid fa-bolt" />
+                <i className="fa-solid fa-bolt"></i>
                 <span>Buy Now</span>
-              </Link>
+              </button>
             </section>
           </section>
           <section
@@ -292,33 +291,31 @@ const Product = () => {
       {/* product-detail */}
 
       {/* related products */}
-      <section className="py-[2rem]">
+      <CardsContainer>
         <ProductList
-          ariaLabel={"View related products"}
-          label={"Related Products"}
           products={products}
+          label={"Related Products"}
+          ariaLabel={"View related products"}
         />
-      </section>
+      </CardsContainer>
       {/* related products */}
 
       {/* floating buttons for small devices */}
       <section className="lg:hidden text-[0.75rem] xs:text-sm min-[400px]:text-base w-full fixed bottom-0 font-roboto font-medium flex bg-white">
-        <Link
-          role="button"
+        <button
           aria-label="Add this to cart"
           className="w-[50%] uppercase py-4 flex justify-center items-center gap-2 font-medium transition hover:bg-transparent hover:text-primary bg-primary border border-primary text-white"
         >
-          <i className="fa-solid fa-cart-shopping" />
+          <i className="fa-solid fa-cart-shopping"></i>
           <span>Add to cart</span>
-        </Link>
-        <Link
-          role="button"
+        </button>
+        <button
           aria-label="Buy this right now"
           className="w-[50%] py-4 uppercase flex justify-center items-center gap-2 font-medium transition border text-secondary hover:text-primary"
         >
-          <i className="fa-solid fa-bolt" />
+          <i className="fa-solid fa-bolt"></i>
           <span>Buy Now</span>
-        </Link>
+        </button>
       </section>
       {/* floating buttons for small devices */}
     </section>

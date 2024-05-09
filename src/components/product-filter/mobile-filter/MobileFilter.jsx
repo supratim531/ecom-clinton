@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { products } from "../../../home/Home";
+import { products } from "../../home/Home";
 
 const MobileFilter = ({ filterSections, handleMobileFilter }) => {
   const [currentSection, setCurrentSection] = useState(null);
 
   useEffect(() => {
     setCurrentSection(filterSections[0]);
+
+    // eslint-disable-next-line
   }, []);
 
   return (

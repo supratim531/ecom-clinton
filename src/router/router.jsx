@@ -5,14 +5,14 @@ import {
 } from "react-router-dom";
 import App from "../App";
 import Home from "../components/home/Home";
-import About from "../components/About";
-import Contact from "../components/Contact";
-import Login from "../components/Login";
-import Register from "../components/Register";
-import Page404 from "../components/Page404";
+import About from "../pages/About";
+import Contact from "../pages/Contact";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
+import Page404 from "../pages/Page404";
 import { ProtectedRoute } from "./ProtectedRoute";
-import Product from "../components/product/Product";
-import Products from "../components/products/Products";
+import Product from "../pages/Product";
+import Products from "../pages/Products";
 
 const router = createBrowserRouter(
   createRoutesFromElements(

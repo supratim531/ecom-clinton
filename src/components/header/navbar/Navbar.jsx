@@ -32,11 +32,11 @@ const Navbar = (props, ref) => {
     <nav
       role="menubar"
       aria-label="Primary navigation"
-      className="font-roboto font-medium p-3 flex justify-between items-center text-[#ddd] bg-secondary"
+      className="font-roboto font-medium p-3 flex justify-between items-center bg-secondary"
     >
       <section className="left">
         <div className="block md:hidden">
-          <Hamburger onClick={handleOpenSideNavbar} />
+          <Hamburger onClick={handleOpenSideNavbar} className="text-white" />
           <SideNavbar
             sideNavbarRef={sideNavbarRef}
             sideNavbarWrapperRef={sideNavbarWrapperRef}
@@ -56,7 +56,7 @@ const Navbar = (props, ref) => {
         {auth?.user ? (
           <Tooltip
             text={"Logout"}
-            className="[&>span]:!-bottom-[90%] [&>span]:after:!border-b-primary [&>span]:after:!border-t-transparent [&>span]:after:!-top-[35%]"
+            className="[&>span]:!-bottom-[90%] [&>span]:after:!border-b-primary [&>span]:after:!border-t-transparent [&>span]:after:!-top-[32%]"
           >
             <button
               tabIndex={0}

@@ -1,5 +1,5 @@
 import React from "react";
-import methods from "../assets/img/methods.png";
+import methods from "../../assets/img/methods.png";
 
 const Footer = () => {
   return (

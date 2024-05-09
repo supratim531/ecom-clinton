@@ -33,7 +33,10 @@ const Header = () => {
             <section className="flex justify-between items-center gap-10">
               <div aria-label="Primary navigation">
                 <div className="block md:hidden">
-                  <Hamburger onClick={navbarRef.current.handleOpenSideNavbar} />
+                  <Hamburger
+                    onClick={navbarRef.current.handleOpenSideNavbar}
+                    className="text-secondary"
+                  />
                 </div>
                 <div className="hidden md:block">
                   <NavItems

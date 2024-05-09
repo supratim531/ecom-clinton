@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
-import { products } from "../home/Home";
-import ProductList from "../product-list/ProductList";
-import MobileFilter from "./product-filter/mobile-filter/MobileFilter";
-import DesktopFilter from "./product-filter/desktop-filter/DesktopFilter";
+import { products } from "../components/home/Home";
+import CardsContainer from "../components/shared/CardsContainer";
+import ProductList from "../components/product-list/ProductList";
+import MobileFilter from "../components/product-filter/mobile-filter/MobileFilter";
+import DesktopFilter from "../components/product-filter/desktop-filter/DesktopFilter";
 
 const filterSections = [
   {
@@ -101,13 +102,13 @@ const Products = () => {
             </select>
           </div>
         </section>
-        <section className="py-[1rem]">
+        <CardsContainer className="my-[1rem]">
           <ProductList
             ariaLabel={"View all products"}
             label={"All Products"}
             products={products}
           />
-        </section>
+        </CardsContainer>
       </section>
     </section>
   );
