@@ -7,14 +7,14 @@ const ProfileMenu = () => {
       label: "Wishlist",
       icon: <i className="fa-regular fa-heart"></i>,
       count: 0,
-      countClassName: "-top-[12%] -right-[5%] font-medium",
+      countClassName: "-top-[12%] right-[5%] lg:-right-[5%]",
       path: "/login",
     },
     {
       label: "Cart",
       icon: <i className="fa-solid fa-cart-shopping"></i>,
       count: 3,
-      countClassName: "-top-[12%] -right-[40%] font-medium",
+      countClassName: "-top-[12%] -right-[30%] lg:-right-[40%]",
       path: "/login",
     },
   ];
