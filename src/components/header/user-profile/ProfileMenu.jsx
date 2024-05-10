@@ -7,14 +7,14 @@ const ProfileMenu = () => {
       label: "Wishlist",
       icon: <i className="fa-regular fa-heart"></i>,
       count: 0,
-      countClassName: "-top-1.5 right-0",
+      countClassName: "-top-[12%] -right-[5%] font-medium",
       path: "/login",
     },
     {
       label: "Cart",
       icon: <i className="fa-solid fa-cart-shopping"></i>,
       count: 3,
-      countClassName: "-top-1.5 -right-2",
+      countClassName: "-top-[12%] -right-[40%] font-medium",
       path: "/login",
     },
   ];
@@ -22,7 +22,7 @@ const ProfileMenu = () => {
   return (
     <ul aria-label="User's profile menu" className="flex items-center gap-4">
       {profileMenuItems.map((profileMenuItem) => (
-        <li key={profileMenuItem.label}>
+        <li key={profileMenuItem.label} className="relative">
           <ProfileMenuItem
             icon={profileMenuItem.icon}
             path={profileMenuItem.path}
